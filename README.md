@@ -4,10 +4,21 @@ like Promise.cast with a delay in milliseconds
 ## usage
 ```js
 var promiseDelay = require('promise-delay')
+
+var eventually = promiseDelay(100, Promise.cast('foo'))
+
+eventually.then(next)
+
+// you can also cast non-Promises to delayed promises
+
+var later = promiseDelay(100, false)
+
+later.then(function (val) {
+    console.log(val)
+    // => false
+  })
+
 ```
-
-
-## api
 
 
 ## installation
