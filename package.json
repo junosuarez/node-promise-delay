@@ -11,6 +11,9 @@
   "repository": "git@github.com:jden/node-promise-delay.git",
   "license": "ISC",
   "readmeFilename": "README.md",
+  "optionalDependencies": {
+    "polyfill-promise": "~4.0.1"
+  },
   "devDependencies": {
     "mochi": "0.3.0"
   }
