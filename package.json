@@ -1,9 +1,13 @@
 {
   "name": "promise-delay",
   "author": "jden <jason@denizac.org>",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "like Promise.cast with a delay in milliseconds",
-  "keywords": ["promise", "timeout", "delay"],
+  "keywords": [
+    "promise",
+    "timeout",
+    "delay"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "mochi"
