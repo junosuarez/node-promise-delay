@@ -2,6 +2,9 @@
   "name": "promise-delay",
   "author": "jden <jason@denizac.org>",
   "version": "1.0.1",
+  "engines": {
+    "node": ">=0.12"
+  },
   "description": "like Promise.cast with a delay in milliseconds",
   "keywords": [
     "promise",
@@ -10,12 +13,14 @@
   ],
   "main": "index.js",
   "scripts": {
+    "pretest": "standard",
     "test": "mochi"
   },
   "repository": "git@github.com:jden/node-promise-delay.git",
   "license": "ISC",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "mochi": "0.3.0"
+    "mochi": "0.3.0",
+    "standard": "^6.0.7"
   }
 }
