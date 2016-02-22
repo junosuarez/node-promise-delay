@@ -24,4 +24,20 @@ describe('promise-delay', function () {
       })
       .then(end, end)
   })
+
+  describe('.reject', function () {
+    it('rejects after a delay', function (end) {
+      var start = Date.now()
+      var err = new Error('blah')
+      promiseDelay.reject(100, err)
+        .then(function () {
+          throw new Error('should not resolve')
+        }, function (e) {
+          expect(e).to.equal(err)
+          var elapsed = Date.now() - start
+          expect(elapsed).to.be.within(90, 110)
+        })
+        .then(end, end)
+    })
+  })
 })

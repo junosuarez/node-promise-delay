@@ -1,5 +1,5 @@
 # promise-delay
-like Promise.cast with a delay in milliseconds
+like Promise.resolve with a delay in milliseconds
 
 [![Circle CI](https://circleci.com/gh/jden/node-promise-delay.svg?style=svg)](https://circleci.com/gh/jden/node-promise-delay)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
@@ -11,7 +11,7 @@ like Promise.cast with a delay in milliseconds
 ```js
 var promiseDelay = require('promise-delay')
 
-var eventually = promiseDelay(100, Promise.cast('foo'))
+var eventually = promiseDelay(100, Promise.resolve('foo'))
 
 eventually.then(next)
 
@@ -23,7 +23,16 @@ later.then(function (val) {
     console.log(val)
     // => false
   })
+```
 
+or, reject after a delay:
+```js
+var rejected = promiseDelay.reject(100, new Error('rejected'))
+
+rejected.catch(function (err) {
+  console.log(err)
+  // Error: rejected
+})
 ```
 
 

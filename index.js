@@ -10,4 +10,13 @@ function promiseDelay (delay, val) {
   })
 }
 
+function delayedReject (delay, val) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      reject(val)
+    }, delay)
+  })
+}
+
 module.exports = promiseDelay
+module.exports.reject = delayedReject
