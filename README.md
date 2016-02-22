@@ -1,6 +1,12 @@
 # promise-delay
 like Promise.cast with a delay in milliseconds
 
+[![Circle CI](https://circleci.com/gh/jden/node-promise-delay.svg?style=svg)](https://circleci.com/gh/jden/node-promise-delay)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
+**Note**: For node 0.10 support, use promise-delay@1.x to include [polyfill-promise](http://npm.im/polyfill-promise)
+
+
 ## usage
 ```js
 var promiseDelay = require('promise-delay')
