@@ -1,13 +1,5 @@
-var Promise
-
-if (global.Promise) {
-  Promise = global.Promise
-} else {
-  try {
-    Promise = require('polyfill-promise')
-  } catch (err) {
-    throw new Error('No Promise found, please install `polyfill-promise`')
-  }
+if (!global.Promise) {
+  throw new Error('No Promise found, please install `polyfill-promise`')
 }
 
 function promiseDelay (delay, val) {
