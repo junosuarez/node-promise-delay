@@ -1,7 +1,14 @@
-try {
- // optional dependency on polyfill-promise
- global.Promise = global.Promise || require('polyfill-promise')
-} finally {}
+var Promise
+
+if (global.Promise) {
+  Promise = global.Promise
+} else {
+  try {
+    Promise = require('polyfill-promise')
+  } catch (err) {
+    throw new Error('No Promise found, please install `polyfill-promise`')
+  }
+}
 
 function promiseDelay (delay, val) {
   return new Promise(function (resolve) {
@@ -9,7 +16,6 @@ function promiseDelay (delay, val) {
       resolve(val)
     }, delay)
   })
-
 }
 
 module.exports = promiseDelay
